@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LowQuality</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <div>
+        <h1 class="popup-title">LowQuality</h1>
+        <p class="popup-subtitle">Economies d'energie</p>
+      </div>
+    </div>
+
+    <div class="stats-total">
+      <div class="stat-card stat-main">
+        <div class="stat-info">
+          <span class="stat-label">Energie economisee</span>
+          <span class="stat-value" id="total-kwh">0</span>
+          <span class="stat-unit">Wh</span>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card stat-small">
+          <div class="stat-info">
+            <span class="stat-value" id="total-charges">0</span>
+            <span class="stat-unit">Recharges tel.</span>
+          </div>
+        </div>
+        <div class="stat-card stat-small">
+          <div class="stat-info">
+            <span class="stat-value" id="total-videos">0</span>
+            <span class="stat-unit">Videos 144p</span>
+          </div>
+        </div>
+        <div class="stat-card stat-small">
+          <div class="stat-info">
+            <span class="stat-value" id="total-data">0</span>
+            <span class="stat-unit">Go economises</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <div class="chart-header">
+        <h2 class="chart-title">Par jour</h2>
+        <div class="chart-period">
+          <button class="period-btn active" data-days="7">7j</button>
+          <button class="period-btn" data-days="30">30j</button>
+          <button class="period-btn" data-days="0">Tout</button>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="savings-chart"></canvas>
+      </div>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-dot dot-kwh"></span> Wh</span>
+        <span class="legend-item"><span class="legend-dot dot-phone"></span> Recharges</span>
+      </div>
+    </div>
+
+    <div class="since-section">
+      <p class="since-text">Actif depuis le <strong id="install-date">--</strong></p>
+    </div>
+
+    <div class="settings-section">
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-label">Auto-fermeture popup</span>
+          <span class="setting-desc">Fermer automatiquement apres 10s (garde 144p)</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="auto-dismiss-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="footer-actions">
+      <button id="reset-btn" class="reset-btn">Reinitialiser</button>
+    </div>
+  </div>
+
+  <script src="chart.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

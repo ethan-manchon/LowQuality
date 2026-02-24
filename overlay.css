@@ -1,0 +1,144 @@
+/* =============================================================================
+   LowQuality - Overlay (sobre)
+   ============================================================================= */
+
+#lowquality-overlay {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 999999;
+  font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+  animation: lowquality-in 0.25s ease-out;
+}
+
+#lowquality-overlay .lowquality-fade-out {
+  animation: lowquality-out 0.2s ease-out forwards;
+}
+
+.lowquality-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  width: 280px;
+  overflow: hidden;
+}
+
+.lowquality-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.lowquality-title {
+  color: #e0e0e0;
+  font-size: 13px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.lowquality-close-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.lowquality-close-btn:hover {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+.lowquality-body {
+  padding: 12px;
+}
+
+.lowquality-msg {
+  color: #999;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.lowquality-msg strong {
+  color: #ccc;
+}
+
+.lowquality-stats {
+  display: flex;
+  gap: 1px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.lowquality-stat {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.lowquality-stat-value {
+  display: block;
+  color: #e0e0e0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lowquality-stat-label {
+  display: block;
+  color: #666;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+
+.lowquality-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.lowquality-btn {
+  flex: 1;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.lowquality-btn-hd {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.lowquality-btn-hd:hover {
+  background: #333;
+}
+
+.lowquality-btn-keep {
+  background: #e0e0e0;
+  color: #1a1a1a;
+}
+
+.lowquality-btn-keep:hover {
+  background: #ccc;
+}
+
+@keyframes lowquality-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lowquality-out {
+  from { opacity: 1; }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
